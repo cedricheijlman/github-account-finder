@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Axios from "axios";
 function Home() {
   const [search, setSearch] = useState(null);
+  const [result, setResult] = useState(null);
 
-  const handleSearch = async () => {
-    await Axios.get(
-      `${process.env.REACT_APP_GITHUB_URL}/search/users?q=${encodeURIComponent(
-        "cedric heijlman"
-      )}`,
-      {
-        headers: {
-          Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
-        },
-      }
-    ).then((result) => {});
+  const handleSearch = () => {
+    Axios.get(`${process.env.REACT_APP_GITHUB_URL}/search/users?q=${search}`, {
+      headers: {
+        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+      },
+    }).then((result) => {
+      console.log(result);
+    });
   };
 
   return (
