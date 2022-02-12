@@ -1,3 +1,5 @@
+import Axios from "axios";
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
@@ -6,6 +8,21 @@ import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 
 function App() {
+  useEffect(() => {
+    Axios.get(
+      `${process.env.REACT_APP_GITHUB_URL}/search/users?q=${encodeURIComponent(
+        "cedric heijlman"
+      )}`,
+      {
+        headers: {
+          Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+        },
+      }
+    ).then((result) => {
+      console.log(result);
+    });
+  }, []);
+
   return (
     <div className="App">
       <Header />
