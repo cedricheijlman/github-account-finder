@@ -1,0 +1,35 @@
+.userCard {
+  border: 1px solid #343434;
+  border-radius: 8px;
+  width: 330px;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.userCard div {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.userCard h2 {
+  margin-bottom: 3px;
+  font-size: 1px;
+}
+
+.userCard p {
+  color: rgb(180, 180, 180);
+}
+.userCard img {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 10px;
+}

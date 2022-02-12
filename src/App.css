@@ -65,6 +65,7 @@
 }
 
 .homePage {
+  padding: 30px;
   color: white;
   padding-bottom: 50px;
   display: flex;
@@ -111,4 +112,12 @@
   font-size: 16px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
+}
+
+.homePage__searchResults {
+  margin: 50px 25px;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 }
