@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import UserCard from "./UserCard";
 function Home() {
   const [search, setSearch] = useState(null);
   const [result, setResult] = useState(null);
@@ -11,6 +12,7 @@ function Home() {
       },
     }).then((result) => {
       console.log(result);
+      setResult(result.data.items);
     });
   };
 
@@ -26,7 +28,13 @@ function Home() {
         />
         <button onClick={handleSearch}>Go</button>
       </div>
-      <div className="homePage__searchResults"></div>
+      <div className="homePage__searchResults">
+        {result &&
+          result.length !== 0 &&
+          result.map((user) => {
+            return <UserCard name={user.login} avatarUrl={user.avatar_url} />;
+          })}
+      </div>
     </div>
   );
 }
