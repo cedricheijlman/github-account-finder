@@ -1,6 +1,6 @@
 .userContainer {
   display: flex;
-  width: 100%;
+
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
@@ -11,6 +11,18 @@
   flex-direction: column;
   margin-left: 35px;
   color: white;
+}
+
+@media (max-width: 634px) {
+  .user__text {
+    align-items: center;
+  }
+}
+
+@media (max-width: 590px) {
+  .user__text {
+    margin: 0;
+  }
 }
 
 .user__text a {
