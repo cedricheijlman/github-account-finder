@@ -1,0 +1,66 @@
+.userContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.user__text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  color: white;
+}
+
+.user__text a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.user__text p {
+  margin-top: 10px;
+  max-width: 500px;
+}
+
+.user__text button {
+  width: 50%;
+  min-width: 250px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-left: 0px;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.userContainer img {
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin-bottom: 25px;
+}
+
+.user__name {
+  display: flex;
+  align-items: center;
+
+  color: white;
+}
+
+.user__name p {
+  align-self: flex-end;
+  margin-bottom: 6px;
+  margin-left: 15px;
+  padding: 3px 10px;
+  border-radius: 5px;
+  background-color: rgba(35, 117, 35, 0.568);
+}
+
+.user__name h2 {
+  font-size: 35px;
+
+  display: block;
+}

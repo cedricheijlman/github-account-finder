@@ -6,14 +6,18 @@ function Home() {
   const [result, setResult] = useState(null);
 
   const handleSearch = () => {
-    Axios.get(`${process.env.REACT_APP_GITHUB_URL}/search/users?q=${search}`, {
-      headers: {
-        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
-      },
-    }).then((result) => {
-      console.log(result);
-      setResult(result.data.items);
-    });
+    if (search && search !== "") {
+      Axios.get(
+        `${process.env.REACT_APP_GITHUB_URL}/search/users?q=${search}`,
+        {
+          headers: {
+            Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+          },
+        }
+      ).then((result) => {
+        setResult(result.data.items);
+      });
+    }
   };
 
   return (
@@ -32,7 +36,13 @@ function Home() {
         {result &&
           result.length !== 0 &&
           result.map((user) => {
-            return <UserCard name={user.login} avatarUrl={user.avatar_url} />;
+            return (
+              <UserCard
+                key={user.id}
+                name={user.login}
+                avatarUrl={user.avatar_url}
+              />
+            );
           })}
       </div>
     </div>

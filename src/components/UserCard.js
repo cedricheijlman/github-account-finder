@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./usercard.css";
 function UserCard({ name, avatarUrl, id }) {
   return (
@@ -6,7 +7,9 @@ function UserCard({ name, avatarUrl, id }) {
       <img height={70} width={70} src={avatarUrl} />
       <div>
         <h2>{name}</h2>
-        <p>Visit Profile</p>
+        <Link to={`/user/${name}`}>
+          <p>Visit Profile</p>
+        </Link>
       </div>
     </div>
   );
